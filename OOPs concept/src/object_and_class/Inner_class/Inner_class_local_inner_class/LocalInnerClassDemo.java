@@ -1,4 +1,4 @@
-package object_and_class.Inner_class_local_inner_class;
+package object_and_class.Inner_class.Inner_class_local_inner_class;
 
 public class LocalInnerClassDemo {
 
