@@ -9,7 +9,7 @@ public class RemoveDuplicateElements {
 
 	public static void main(String[] args) {
 
-//        create an arrayList
+//        create an arrayLists
 		List<Integer> numberList = new ArrayList<Integer>();
 
 //		add elements in array
