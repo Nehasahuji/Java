@@ -21,7 +21,7 @@ public class StudentDao {
 
 	Connection con = null;
 
-//	register driver
+//=====================================register driver=============================================================
 	public void registerDriver() {
 
 		try {
@@ -35,6 +35,7 @@ public class StudentDao {
 
 	}
 
+//=======================================connection with database==================================================
 	public void connect() {
 
 		String userName = "root";
@@ -51,8 +52,11 @@ public class StudentDao {
 		}
 	}
 
+//=====================================get Name of user from rollNo================================================
 	public String getName(int rollNo) throws SQLException {
 
+		registerDriver();
+		connect();
 		Student student = new Student();
 
 		String query = "SELECT student.name from student where roll_no=" + rollNo;
@@ -77,7 +81,11 @@ public class StudentDao {
 
 	}
 
+//=====================================add new student===============================================================
 	public int addStudent(Student student) throws SQLException {
+
+		registerDriver();
+		connect();
 
 		String insertQuery = "insert into student values(?,?)";
 		PreparedStatement pst = con.prepareStatement(insertQuery);
@@ -93,7 +101,11 @@ public class StudentDao {
 		return result;
 	}
 
+//=====================================remove student==================================================================
 	public int removeStudent(int rollNo) throws SQLException {
+
+		registerDriver();
+		connect();
 
 		String deletequery = "delete from student where roll_no=" + rollNo;
 		Statement st = con.createStatement();
@@ -104,7 +116,11 @@ public class StudentDao {
 
 	}
 
+//=====================================show all records===============================================================
 	public void ShowRecords() throws SQLException {
+
+		registerDriver();
+		connect();
 
 		String retriveQuery = "select * from student";
 		Statement st = con.createStatement();
